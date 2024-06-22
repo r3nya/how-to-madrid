@@ -1,11 +1,13 @@
 import starlight from "@astrojs/starlight";
 import { defineConfig } from "astro/config";
 import starlightLinksValidator from "starlight-links-validator";
+import overrideIntegration from "./src/overrideIntegration.mjs";
 
 // https://astro.build/config
 export default defineConfig({
   site: "http://madrid101.xyz/",
   integrations: [
+    overrideIntegration(),
     starlight({
       plugins: [starlightLinksValidator()],
       title: "Madrid 101",
